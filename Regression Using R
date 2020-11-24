@@ -1,0 +1,32 @@
+install.packages("readxl")
+install.packages("stats")
+
+
+
+library("readxl")
+
+
+team2 = read_excel("/Users/Perry/Google Drive File Stream/My Drive/Commerce/Fall 20/BUSA 521/Phase 3/x_var.xlsx")
+
+team2$"Products' Accessibility"
+
+
+
+
+r1 = lm(`Consumer’s Intention To Purchase` ~ `intercept` + `Products Availability` + `Covid-19 Regualtions` + 
+        `Health Risks Perception` + `Products' Quality` + `Time Saving` + `Products' Accessibility` + 
+        `Price And Deal` + 0, data = team2)
+summary(r1)
+r1$coefficients
+
+#Multiple Linear Regression
+r1 = lm(`Consumer’s Intention To Purchase` ~ `intercept` + `Products Availability` + `Covid-19 Regualtions` + 
+          `Health Risks Perception` + `Products' Quality` + `Time Saving` + `Products' Accessibility` + 
+          `Price And Deal`, data = team2)
+#Generate the Output
+summary(r1)
+#Print the coefficients
+r1$coefficients
+
+
+
